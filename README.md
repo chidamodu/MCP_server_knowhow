@@ -59,15 +59,24 @@ Goal is to practice different implementations using the MCP server
 
 17. Can access the config file using: open -e ~/Library/Application\ Support/Claude/claude_desktop_config.json to create the following:
 
-    { 
-    "mcpServers": 
-    { 
+    {
+    
+    "mcpServers":
+    
+    {
+    
     "name-mcp-server": #the name of the MCP server created
-    { 
+    
+    {
+    
     "command": "/path/name-mcp-server/.venv/bin/python", #provide the entire path to the python virtual environment; <path> is a placeholder
+    
     "args": ["/path/name-mcp-server/some_mcp_file.py"] #provide the entire path to the python file saved in the MCP server directory; <path> is a placeholder
-    } 
-    } 
+    
+    }
+    
+    }
+    
     }
 
 19. When all this is done, we finally run the following:
