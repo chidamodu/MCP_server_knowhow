@@ -32,12 +32,15 @@ Goal is to practice different implementations using the MCP server
 12. Adding the following in the some_mcp_file.py is important as this code block acts as the "Launch Button" for our server. It tells python exactly when to start the server and how to talk to the LLM of our choice.
 
     if __name__ == "__main__":
+    
         mcp.run(transport="stdio")
 
-13. If we would like to test the code using the MCP Inspector, we run the following command:
+14. If we would like to test the code using the MCP Inspector, we run the following command:
+
     uv run --with "mcp[cli]" mcp dev some_mcp_file.py
 
-14. In parallel, we need to create a config file for our LLM to access. Let's see a sample code for Claude:
+15. In parallel, we need to create a config file for our LLM to access. Let's see a sample code for Claude:
+
     mkdir -p ~/Library/Application\ Support/Claude 
     touch ~/Library/Application\ Support/Claude/claude_desktop_config.json 
 
@@ -46,7 +49,7 @@ Goal is to practice different implementations using the MCP server
     B. The Command: "To use it, you need to run /path/to/python."
     C. The Arguments: "And you must run this specific script: some_mcp_file.py."
 
-15. Can access the config file using: open -e ~/Library/Application\ Support/Claude/claude_desktop_config.json to create the following:
+17. Can access the config file using: open -e ~/Library/Application\ Support/Claude/claude_desktop_config.json to create the following:
     { 
     "mcpServers": 
     { 
@@ -58,7 +61,7 @@ Goal is to practice different implementations using the MCP server
     } 
     }
 
-16. When all this is done, we finally run the following:
+18. When all this is done, we finally run the following:
 
     uv run some_mcp_file.py
 This code here ensures the tools exist, launches the code in a bubble, and opens the "phone line" for Claude to talk to it.
