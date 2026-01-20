@@ -6,32 +6,37 @@ Goal is to practice different implementations using the MCP server
 1. We initialize a project for creating an MCP server, and we preferably do it using uv.
   
 2. uv init name-mcp-server (whatever name we choose goes here instead of <name-mcp-server>)
-   We get an outcome: Initialized project 'name-mcp-server' at 'location', i.e., path where we saved our MCP server.
+   We get an outcome:
 
-3. It initializes the server with these files by default: main.py, pyproject.toml, and README.md.
+   Initialized project 'name-mcp-server' at 'location', i.e., path where we saved our MCP server.
 
-4. cd to the directory where our MCP server resides.
+4. It initializes the server with these files by default: main.py, pyproject.toml, and README.md.
+
+5. cd to the directory where our MCP server resides.
    
-5. If we would like to test our code using the MCP Inspector, we could do this: uv add "mcp[cli]".
+6. If we would like to test our code using the MCP Inspector, we could do this: uv add "mcp[cli]".
 
-6. Create a virtual environment in a preferred programming language, say, Python.
+7. Create a virtual environment in a preferred programming language, say, Python.
 
-7. Activate the virtual environment. If the python version requested in the pyproject.toml file in the MCP server directory does not match the python version in the virtual environment, we will get an error message as follows:
+8. Activate the virtual environment. If the python version requested in the pyproject.toml file in the MCP server directory does not match the python version in the virtual environment, we will get an error message as follows:
     
     Because the requested Python version (>=3.8.19) does not satisfy Python>=3.10 and your project depends on mcp[cli], we can conclude
     that your project's requirements are unsatisfiable.
    
-8. We can fix the issue by changing the version of python in the .toml file. If we still see the issue popping up, we can try pinning down the version in the virtual python environment like this: uv python pin 3.12
+9. We can fix the issue by changing the version of python in the .toml file. If we still see the issue popping up, we can try pinning down the version in the virtual python environment like this: 
 
-9. Deactivate the virtual python environment and try activating it again to see if the error still persists.
+    uv python pin 3.12
 
-10. touch some_mcp_file.py (where we save the resources, tools, and other functionalities we plan to implement through our MCP server).
+10. Deactivate the virtual python environment and try activating it again to see if the error still persists.
 
-11. Navigate to the some_mcp_file.py and create those functionalities.
+11. touch some_mcp_file.py (where we save the resources, tools, and other functionalities we plan to implement through our MCP server).
 
-12. Adding the following in the some_mcp_file.py is important as this code block acts as the "Launch Button" for our server. It tells python exactly when to start the server and how to talk to the LLM of our choice.
+12. Navigate to the some_mcp_file.py and create those functionalities.
+
+13. Adding the following in the some_mcp_file.py is important as this code block acts as the "Launch Button" for our server. It tells python exactly when to start the server and how to talk to the LLM of our choice.
 
     if __name__ == "__main__":
+    
         mcp.run(transport="stdio")
 
 14. If we would like to test the code using the MCP Inspector, we run the following command:
@@ -68,6 +73,7 @@ Goal is to practice different implementations using the MCP server
 19. When all this is done, we finally run the following:
 
     uv run some_mcp_file.py
+    
 This code here ensures the tools exist, launches the code in a bubble, and opens the "phone line" for Claude to talk to it.
 
 
